@@ -1,8 +1,17 @@
 <style>
   :host {
+    --menu-bg: #f0f0f0;
+    --menu-color: #333;
+    --menu-border: #ccc;
     position: relative;
     display: inline-block;
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  }
+
+  :host([theme='dark']) {
+    --menu-bg: #2f3133;
+    --menu-color: #ccc;
+    --menu-border: #484a4c;
   }
 
   #burger-btn {
@@ -10,7 +19,7 @@
     border: none;
     cursor: pointer;
     padding: 10px;
-    color: #928dab;
+    color: var(--menu-color);
     transition: color 0.3s ease;
     display: flex;
     align-items: center;
@@ -23,24 +32,23 @@
   }
 
   #burger-btn:hover {
-    color: #3d3a4b;
+    color: #595763;
   }
 
-  /* The dropdown menu */
   #menu {
     display: none;
     flex-direction: column;
     position: absolute;
     top: 48px;
     left: 0;
-    background: #2f3133;
-    border: 1px solid #484a4c;
+    background: var(--menu-bg);
+    border: 1px solid var(--menu-border);
     padding: 8px 0;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     border-radius: 6px;
     width: 250px;
     z-index: 10;
-    color: #ccc;
+    color: var(--menu-color);
     font-weight: 600;
     font-size: 14px;
   }
@@ -55,33 +63,38 @@
     gap: 12px;
     padding: 10px 24px;
     cursor: pointer;
-    color: #ccc;
+    color: var(--menu-color);
     font-weight: 600;
     user-select: none;
-    transition: background 0.2s ease;
+    transition: background 0.2s ease, color 0.2s ease;
   }
 
-  .navigation:hover {
-    background: #ffbf47;
+  /* Dark theme hover */
+  :host([theme='dark']) .navigation:hover {
+    background: #4d4b49;
     color: white;
+  }
+
+  /* Light theme hover */
+  :host(:not([theme='dark'])) .navigation:hover {
+    background: #e0e0e0; /* subtle light gray */
+    color: #222; /* darker text for contrast */
   }
 
   .logo {
     width: 20px;
     height: 20px;
-    filter: invert(80%);
+    filter: invert(50%);
   }
 </style>
 
-<!-- Burger button -->
-<button id="burger-btn">
+<button id="burger-btn" aria-label="Toggle menu">
   <svg viewBox="0 0 24 24" fill="currentColor">
     <path d="M3,6H21V8H3V6M3,11H21V13H3V11M3,16H21V18H3V16Z" />
   </svg>
 </button>
 
-<!-- Navigation menu -->
-<div class="menu" id="menu">
+<div id="menu">
   <div class="navigation home">
     <img
       class="logo"
