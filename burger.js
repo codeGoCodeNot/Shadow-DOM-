@@ -29,6 +29,20 @@ export class Burger extends HTMLElement {
       });
     }
 
+    const home = this.shadowRoot.querySelector(".home");
+    if (home) {
+      home.addEventListener("click", (e) => {
+        e.stopPropagation();
+
+        this.dispatchEvent(
+          new CustomEvent("show-home", {
+            bubbles: true,
+            composed: true,
+          })
+        );
+      });
+    }
+
     const button = this.shadowRoot.querySelector("#burger-btn");
     const menu = this.shadowRoot.querySelector("#menu");
 

@@ -20,3 +20,10 @@ document.addEventListener("hide-profile", () => {
     main.hideProfile(); // add this method to hide profile UI inside MyMain class
   }
 });
+
+document.addEventListener("show-home", () => {
+  const main = document.querySelector("my-main");
+  if (main) {
+    main.renderDefault(); // reset to default view on home click
+  }
+});
