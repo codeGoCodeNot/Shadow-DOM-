@@ -1,0 +1,197 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 16px;
+}
+
+body.dark {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  color: #eee;
+  height: 100vh;
+  background: linear-gradient(145deg, #1c1f22, #2e3135);
+  background: linear-gradient(145deg, #1c1f22, #2e3135),
+    radial-gradient(circle at top left, #3a3d40, transparent 60%),
+    radial-gradient(circle at bottom right, #121416, transparent 60%);
+  background-blend-mode: overlay;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100vh;
+  color: #333;
+  background: linear-gradient(145deg, #e0e0e0, #c7c7c7),
+    radial-gradient(circle at top left, #ffffff, transparent 60%),
+    radial-gradient(circle at bottom right, #b3b3b3, transparent 60%);
+  background-blend-mode: overlay;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+header,
+footer {
+  height: 80px;
+  display: flex;
+  align-items: center;
+  padding: 0 24px;
+  letter-spacing: 0.1em;
+  user-select: none;
+  height: 80px;
+  padding: 20px;
+}
+
+body.dark header,
+body.dark footer,
+body.dark main {
+  color: #ccc;
+}
+
+header {
+  justify-content: space-between;
+}
+
+main {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+footer {
+  justify-content: center;
+}
+
+footer p {
+  font-weight: 800;
+  font-size: 15px;
+  opacity: 0.8;
+}
+
+#lightToggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  outline: none;
+}
+
+#lightToggle img {
+  filter: invert(50%);
+  transition: filter 0.3s ease;
+  display: block;
+}
+
+#lightToggle:hover img {
+  filter: invert(70%);
+}
+
+.social-button {
+  position: relative;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  padding: 8px 16px;
+  background: transparent;
+  border: none;
+  color: #333;
+  font-weight: bold;
+  user-select: none;
+  transition: color 0.3s ease, transform 0.2s ease;
+  z-index: 10;
+}
+
+.social-button:hover,
+.social-button:focus {
+  color: #555;
+  transform: scale(1.1);
+  outline: none;
+}
+
+body.dark .social-button {
+  color: #ccc;
+}
+
+body.dark .social-button:hover,
+body.dark .social-button:focus {
+  color: #fff;
+}
+
+.tooltip {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  padding: 8px 0;
+  display: flex;
+  flex-direction: column;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+  white-space: nowrap;
+  z-index: 1000;
+  min-width: 140px;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  user-select: none;
+}
+
+.social-button:hover .tooltip {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.tooltip a {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: background-color 0.2s ease;
+}
+
+.tooltip a:hover {
+  background-color: #f0f0f0;
+}
+
+.tooltip a img {
+  width: 15px;
+  height: 15px;
+  filter: none;
+}
+
+/* Light mode uses body font and bg */
+body:not(.dark) .tooltip {
+  background: linear-gradient(145deg, #e0e0e0, #c7c7c7);
+  color: #333;
+}
+
+/* Dark mode uses body font and bg */
+body.dark .tooltip {
+  background: linear-gradient(145deg, #3e4042, #2e3135);
+  color: #eee;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Light mode tooltip links */
+body:not(.dark) .tooltip a {
+  color: #333;
+}
+
+body.dark .tooltip a:hover {
+  background-color: rgba(255, 255, 255, 0.1); /* subtle light on dark */
+}
+
+/* Dark mode tooltip links */
+body.dark .tooltip a {
+  color: #eee;
+}
+
+.tooltip a span {
+  font-size: 12px;
+}

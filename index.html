@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body class="dark">
+    <header>
+      <my-burger theme="dark" id="burger-button">
+        <svg viewBox="0 0 24 24" fill="currentColor">
+          <path d="M3,6H21V8H3V6M3,11H21V13H3V11M3,16H21V18H3V16Z" />
+        </svg>
+      </my-burger>
+
+      <div class="media">
+        <div
+          class="social-button"
+          tabindex="0"
+          role="button"
+          aria-haspopup="true"
+          aria-expanded="false"
+        >
+          Social Account
+          <div class="tooltip" tabindex="0">
+            <a
+              href="https://github.com/codeGoCodeNot"
+              target="_blank"
+              aria-label="GitHub"
+            >
+              <img
+                src="https://cdn-icons-png.flaticon.com/24/25/25231.png"
+                alt="GitHub"
+              />
+              <span>Github</span>
+            </a>
+            <a
+              href="https://www.linkedin.com/feed/?trk=onboarding-landing"
+              target="_blank"
+              aria-label="LinkedIn"
+            >
+              <img
+                src="https://cdn-icons-png.flaticon.com/24/174/174857.png"
+                alt="LinkedIn"
+              />
+              <span>Linkedin</span>
+            </a>
+
+            <a
+              href="https://x.com/berdinjohnsen"
+              target="_blank"
+              aria-label="X (Twitter)"
+              rel="noopener noreferrer"
+            >
+              <img
+                src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/x.svg"
+                alt="X Logo"
+                width="24"
+                height="24"
+              />
+              <span>X/Twitter</span>
+            </a>
+
+            <a
+              href="https://www.instagram.com/johnsenberdin/"
+              target="_blank"
+              aria-label="Instagram"
+              rel="noopener noreferrer"
+            >
+              <img
+                src="https://cdn-icons-png.flaticon.com/24/2111/2111463.png"
+                alt="Instagram"
+              />
+              <span>Instagram</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <button
+        id="lightToggle"
+        style="background: none; border: none; cursor: pointer; padding: 0"
+      >
+        <img
+          src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a3/Light_bulb_%28yellow%29_icon.svg/2048px-Light_bulb_%28yellow%29_icon.svg.png"
+          alt="light bulb on"
+          width="40"
+        />
+      </button>
+    </header>
+    <main>
+      <my-main></my-main>
+    </main>
+    <footer>
+      <p>© 2025 CodeGoCodeNot</p>
+    </footer>
+
+    <script type="module" src="index.js"></script>
+  </body>
+</html>
