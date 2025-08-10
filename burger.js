@@ -11,6 +11,18 @@ export class Burger extends HTMLElement {
     template.innerHTML = html;
     this.shadowRoot.append(template.content.cloneNode(true));
 
+    const profile = this.shadowRoot.querySelector('.profile');
+    if (profile) {
+      profile.style.cursor = 'pointer';
+      profile.addEventListener('click', (e) => {
+        e.stopPropagation();
+        console.log('click');
+        this.dispatchEvent(
+          new CustomEvent('show-profile', { bubbles: true, composed: true })
+        );
+      });
+    }
+
     const button = this.shadowRoot.querySelector('#burger-btn');
     const menu = this.shadowRoot.querySelector('#menu');
 
@@ -33,7 +45,7 @@ export class Burger extends HTMLElement {
     return ['theme'];
   }
 
-  attributeChangedCallback(name, oldVal, newVal) {
+  attributeChangedCallback(name, newVal) {
     if (name === 'theme') {
       this.updateTheme(newVal);
     }
