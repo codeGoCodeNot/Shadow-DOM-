@@ -1,0 +1,129 @@
+<style>
+  .menu {
+    display: none;
+    flex-direction: column;
+    background: white;
+    border: 1px solid #ccc;
+    padding: 8px;
+    position: absolute;
+    top: 50px;
+    left: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  }
+  .menu.show {
+    display: flex;
+  }
+  .navigation {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px;
+    cursor: pointer;
+  }
+  .navigation:hover {
+    background: rgba(0, 0, 0, 0.1);
+  }
+  .logo {
+    width: 24px;
+    height: 24px;
+  }
+  button {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    color: #ffbf47;
+  }
+  button svg {
+    width: 28px;
+    height: 28px;
+    fill: #ffbf47;
+    transition: fill 0.3s ease;
+  }
+  button:hover svg {
+    fill: #ffaa00;
+  }
+</style>
+
+<!-- Burger button -->
+<button id="burger-btn">
+  <svg viewBox="0 0 24 24" fill="currentColor">
+    <path d="M3,6H21V8H3V6M3,11H21V13H3V11M3,16H21V18H3V16Z" />
+  </svg>
+</button>
+
+<!-- Navigation menu -->
+<div class="menu" id="menu">
+  <div class="navigation home">
+    <img
+      class="logo"
+      src="https://cdn.jsdelivr.net/npm/@mdi/svg/svg/home.svg"
+      alt="Home"
+    />
+    <p>Home</p>
+  </div>
+  <div class="navigation profile">
+    <img
+      class="logo"
+      src="https://cdn.jsdelivr.net/npm/@mdi/svg/svg/card-account-details.svg"
+      alt="Profile"
+    />
+    <p>Profile</p>
+  </div>
+  <div class="navigation messages">
+    <img
+      class="logo"
+      src="https://cdn.jsdelivr.net/npm/@mdi/svg/svg/message.svg"
+      alt="Messages"
+    />
+    <p>Messages</p>
+  </div>
+  <div class="navigation history">
+    <img
+      class="logo"
+      src="https://cdn.jsdelivr.net/npm/@mdi/svg/svg/history.svg"
+      alt="History"
+    />
+    <p>History</p>
+  </div>
+  <div class="navigation tasks">
+    <img
+      class="logo"
+      src="https://cdn.jsdelivr.net/npm/@mdi/svg/svg/calendar-check.svg"
+      alt="Tasks"
+    />
+    <p>Tasks</p>
+  </div>
+  <div class="navigation communities">
+    <img
+      class="logo"
+      src="https://cdn.jsdelivr.net/npm/@mdi/svg/svg/account-group.svg"
+      alt="Communities"
+    />
+    <p>Communities</p>
+  </div>
+  <div class="navigation settings">
+    <img
+      class="logo"
+      src="https://cdn.jsdelivr.net/npm/@mdi/svg/svg/cog.svg"
+      alt="Settings"
+    />
+    <p>Settings</p>
+  </div>
+  <div class="navigation support">
+    <img
+      class="logo"
+      src="https://cdn.jsdelivr.net/npm/@mdi/svg/svg/help-box.svg"
+      alt="Support"
+    />
+    <p>Support</p>
+  </div>
+  <div class="navigation privacy">
+    <img
+      class="logo"
+      src="https://cdn.jsdelivr.net/npm/@mdi/svg/svg/shield-check.svg"
+      alt="Privacy"
+    />
+    <p>Privacy</p>
+  </div>
+</div>
