@@ -13,3 +13,10 @@ document.addEventListener("show-profile", () => {
     main.renderProfile(); // this method you define inside MyMain class
   }
 });
+
+document.addEventListener("hide-profile", () => {
+  const main = document.querySelector("my-main");
+  if (main) {
+    main.hideProfile(); // add this method to hide profile UI inside MyMain class
+  }
+});
