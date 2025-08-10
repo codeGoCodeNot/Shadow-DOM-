@@ -5,14 +5,14 @@
     --menu-border: #ccc;
     position: relative;
     display: inline-block;
-    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   }
 
-  :host([theme='dark']) {
-  --menu-bg: #2f3133;
-  --menu-color: #888;
-  --menu-border: #484a4c;
-}
+  :host([theme="dark"]) {
+    --menu-bg: #2f3133;
+    --menu-color: #888;
+    --menu-border: #484a4c;
+  }
 
   #burger-btn {
     background: transparent;
@@ -70,13 +70,13 @@
   }
 
   /* Dark theme hover */
-  :host([theme='dark']) .navigation:hover {
+  :host([theme="dark"]) .navigation:hover {
     background: #4d4b49;
     color: white;
   }
 
   /* Light theme hover */
-  :host(:not([theme='dark'])) .navigation:hover {
+  :host(:not([theme="dark"])) .navigation:hover {
     background: #e0e0e0; /* subtle light gray */
     color: #222; /* darker text for contrast */
   }
@@ -87,9 +87,9 @@
     filter: invert(50%);
   }
 
-  :host([theme='dark']) .logo {
-  filter: invert(90%);
-}
+  :host([theme="dark"]) .logo {
+    filter: invert(90%);
+  }
 </style>
 
 <button id="burger-btn" aria-label="Toggle menu">
@@ -139,6 +139,5 @@
       alt="Support"
     />
     <p>Support</p>
-  </div>
   </div>
 </div>
